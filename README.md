@@ -1,30 +1,54 @@
 # mcp-gbif
 
-MCP server for biodiversity data via the [Global Biodiversity Information Facility (GBIF) API](https://www.gbif.org/developer/summary). No authentication required.
+GBIF MCP — wraps the Global Biodiversity Information Facility API v1 (free, no auth)
+
+Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 250+ live data sources.
 
 ## Tools
 
 | Tool | Description |
 |------|-------------|
-| `search_species` | Search GBIF species backbone by name or keyword |
-| `get_species` | Get full taxonomic details for a species by taxon key |
-| `get_occurrences` | Retrieve georeferenced occurrence records for a taxon |
 
-## Quickstart (Pipeworx Gateway)
+## Quick Start
 
-```bash
-curl -X POST https://gateway.pipeworx.io/mcp \
-  -H "Content-Type: application/json" \
-  -d '{
-    "jsonrpc": "2.0",
-    "method": "tools/call",
-    "params": {
-      "name": "gbif_search_species",
-      "arguments": { "query": "Homo sapiens" }
-    },
-    "id": 1
-  }'
+Add to your MCP client (Claude Desktop, Cursor, Windsurf, etc.):
+
+```json
+{
+  "mcpServers": {
+    "gbif": {
+      "url": "https://gateway.pipeworx.io/gbif/mcp"
+    }
+  }
+}
 ```
+
+Or connect to the full Pipeworx gateway for access to all 250+ data sources:
+
+```json
+{
+  "mcpServers": {
+    "pipeworx": {
+      "url": "https://gateway.pipeworx.io/mcp"
+    }
+  }
+}
+```
+
+## Using with ask_pipeworx
+
+Instead of calling tools directly, you can ask questions in plain English:
+
+```
+ask_pipeworx({ question: "your question about Gbif data" })
+```
+
+The gateway picks the right tool and fills the arguments automatically.
+
+## More
+
+- [All tools and guides](https://github.com/pipeworx-io/examples)
+- [pipeworx.io](https://pipeworx.io)
 
 ## License
 
