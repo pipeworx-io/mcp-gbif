@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-gbif",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "GBIF MCP — wraps the Global Biodiversity Information Facility API v1 (free, no auth)",
   "type": "module",
   "main": "src/index.ts",
@@ -26,7 +26,7 @@
     "@cloudflare/workers-types": "^4.20260405.1"
   },
   "pipeworx": {
-    "sourceHash": "v1-d8acc8eb95148e9b952c1165d0d2c2cf612b27a1490e375c131cf2c5de3a5051",
-    "sourceCommit": "91681e9a4a137fa0051d58e32f38c64b6334af5c"
+    "sourceHash": "v1-5d508f61a1462cdd6471485c2808db130d111d587bc7edebf90e2dc635324a24",
+    "sourceCommit": "445bacc5596a845c12d6945fbfcdf330ef60dcc4"
   }
 }
